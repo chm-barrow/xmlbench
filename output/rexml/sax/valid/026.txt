@@ -1,0 +1,6 @@
+<doc>
+  <foo>
+  </foo>
+  <foo>
+  </foo>
+</doc>

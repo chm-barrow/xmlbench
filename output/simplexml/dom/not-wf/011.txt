@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/011.xml:1: parser error : Specification mandates value for attribute a1 in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc a1></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():        ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

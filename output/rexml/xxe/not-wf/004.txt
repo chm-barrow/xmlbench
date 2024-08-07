@@ -1,0 +1,5 @@
+/var/lib/gems/3.1.0/gems/nokogiri-1.16.7-x86_64-linux/lib/nokogiri/xml/document.rb:69:in `read_io': 2:1: FATAL: ParsePI: PI target never end ... (Nokogiri::XML::SyntaxError)
+	from /var/lib/gems/3.1.0/gems/nokogiri-1.16.7-x86_64-linux/lib/nokogiri/xml/document.rb:69:in `parse'
+	from /var/lib/gems/3.1.0/gems/nokogiri-1.16.7-x86_64-linux/lib/nokogiri/xml.rb:8:in `XML'
+	from dom_xxe.rb:6:in `parse_and_print_xml'
+	from dom_xxe.rb:37:in `<main>'

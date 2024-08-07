@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/025.xml:1: parser error : Sequence ']]>' not allowed in content in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc>]]></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():      ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

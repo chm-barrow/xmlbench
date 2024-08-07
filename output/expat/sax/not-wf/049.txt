@@ -1,0 +1,11 @@
+Parse error at line 3:
+mismatched tag
+Start element: doc
+Character data: 
+
+Start element: a
+Character data: xyz
+Character data: ]
+End element: a
+Character data: 
+

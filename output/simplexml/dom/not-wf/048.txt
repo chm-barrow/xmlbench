@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/048.xml:3: parser error : Extra content at the end of the document in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <![CDATA[]]> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

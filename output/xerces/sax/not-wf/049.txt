@@ -1,0 +1,10 @@
+Start element: doc
+Character data: 
+
+Start element: a
+Character data: xyz]
+End element: a
+Character data: 
+
+Character data: 
+Fatal Error: expected end of tag 'doc'

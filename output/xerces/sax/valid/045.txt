@@ -1,0 +1,3 @@
+Warning: attribute 'a1' has already been declared for element 'doc'
+Start element: doc
+End element: doc

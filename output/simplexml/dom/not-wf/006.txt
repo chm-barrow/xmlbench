@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/006.xml:1: parser error : Double hyphen within comment: <!-- a comment  in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc><!-- a comment -- another --></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():                     ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

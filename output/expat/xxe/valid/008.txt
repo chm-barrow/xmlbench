@@ -1,0 +1,7 @@
+Start element: doc
+Character data: &
+Character data: <
+Character data: >
+Character data: "
+Character data: '
+End element: doc

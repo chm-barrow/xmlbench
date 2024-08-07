@@ -1,0 +1,6 @@
+Parse error at line 3, column 4294967296:
+junk after document element
+Start element: doc
+Character data: 
+
+End element: doc

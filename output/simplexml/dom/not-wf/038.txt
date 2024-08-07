@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/038.xml:1: parser error : Attribute x redefined in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc x="foo" y="bar" x="baz"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():                             ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

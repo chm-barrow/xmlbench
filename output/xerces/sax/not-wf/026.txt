@@ -1,0 +1,2 @@
+Start element: doc
+Fatal Error: ']]>' sequence is not allowed in character data

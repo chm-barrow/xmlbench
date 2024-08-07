@@ -1,0 +1,4 @@
+Parse error at line 1:
+junk after document element
+Start element: doc
+End element: doc

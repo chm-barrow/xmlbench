@@ -1,0 +1,7 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/018.xml:1: parser error : StartTag: invalid element name in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc><![CDATA [ stuff]]></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():       ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/018.xml:1: parser error : Sequence ']]>' not allowed in content in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc><![CDATA [ stuff]]></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():       ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

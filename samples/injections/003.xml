@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE replace [
+    <!ELEMENT userInfo (firstName, lastName)>
+    <!ELEMENT firstName (#PCDATA)>
+    <!ELEMENT lastName (#PCDATA)>
+    <!ENTITY ent SYSTEM "file:///home/debian/Desktop/docs/samples/external/found.txt">
+]>
+<userInfo>
+ <firstName>John</firstName>
+ <lastName>&ent;</lastName>
+</userInfo>

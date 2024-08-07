@@ -1,0 +1,6 @@
+<userInfo>
+ <firstName>John</firstName>
+</userInfo>
+<userInfo>
+ <lastName></lastName>
+</userInfo>

@@ -1,0 +1,5 @@
+Start element: doc
+Character data: 
+
+End element: doc
+Fatal Error: comment or processing instruction expected

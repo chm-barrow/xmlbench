@@ -1,0 +1,13 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/016.xml:1: parser error : error parsing attribute name in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc a1="v1" "v2"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():              ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/016.xml:1: parser error : attributes construct error in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc a1="v1" "v2"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():              ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/016.xml:1: parser error : Couldn't find end of Start Tag doc line 1 in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc a1="v1" "v2"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():              ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/016.xml:1: parser error : Extra content at the end of the document in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc a1="v1" "v2"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():              ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

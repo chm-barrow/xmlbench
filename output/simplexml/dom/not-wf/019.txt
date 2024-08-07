@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/019.xml:1: parser error : Opening and ending tag mismatch: doc line 1 and unparsable in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc></> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():         ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

@@ -1,0 +1,2 @@
+Fatal Error: unable to open DTD document '/home/debian/Desktop/docs/samples/not-wf/05
+4.ent'

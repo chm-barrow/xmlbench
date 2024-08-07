@@ -1,0 +1,3 @@
+Start element: doc
+Character data: <&
+End element: doc

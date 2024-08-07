@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/035.xml:1: parser error : StartTag: invalid element name in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc>1 < 2 but not in XML</doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():         ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

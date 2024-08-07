@@ -1,0 +1,1 @@
+Fatal Error: expected ']]>' sequence to end conditional section

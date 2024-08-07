@@ -1,0 +1,6 @@
+Parse error at line 2, column 4294967296:
+unclosed CDATA section
+Start element: doc
+Character data: </doc>
+Character data: 
+

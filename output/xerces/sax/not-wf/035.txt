@@ -1,0 +1,3 @@
+Start element: doc
+Character data: 1 
+Fatal Error: element name expected

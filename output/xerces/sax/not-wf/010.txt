@@ -1,0 +1,3 @@
+Start element: doc
+Character data: A 
+Fatal Error: expected entity name for reference

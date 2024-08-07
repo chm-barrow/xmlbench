@@ -1,0 +1,4 @@
+/var/lib/gems/3.1.0/gems/nokogiri-1.16.7-x86_64-linux/lib/nokogiri/xml/sax/parser.rb:110:in `memory': data cannot be empty (RuntimeError)
+	from /var/lib/gems/3.1.0/gems/nokogiri-1.16.7-x86_64-linux/lib/nokogiri/xml/sax/parser.rb:110:in `parse_memory'
+	from /var/lib/gems/3.1.0/gems/nokogiri-1.16.7-x86_64-linux/lib/nokogiri/xml/sax/parser.rb:85:in `parse'
+	from sax.rb:39:in `<main>'

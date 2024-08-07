@@ -1,0 +1,3 @@
+PHP Warning:  simplexml_load_file(): ../samples/valid/012.xml:5: namespace error : Failed to parse QName ':' in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc :="v1"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():       ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30

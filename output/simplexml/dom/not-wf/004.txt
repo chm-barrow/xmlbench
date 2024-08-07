@@ -1,0 +1,7 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/004.xml:2: parser error : ParsePI: PI target never end ... in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():  in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/004.xml:2: parser error : Premature end of data in tag doc line 1 in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():  in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

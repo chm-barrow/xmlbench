@@ -1,0 +1,6 @@
+Start element: doc
+Start element: foo
+End element: foo
+Start element: foo
+End element: foo
+End element: doc

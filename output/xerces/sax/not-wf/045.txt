@@ -1,0 +1,4 @@
+Start element: doc
+Character data: 
+
+Fatal Error: unterminated start tag 'a'

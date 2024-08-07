@@ -1,0 +1,3 @@
+Start element: doc
+Start element: a
+Fatal Error: unterminated end tag 'a'

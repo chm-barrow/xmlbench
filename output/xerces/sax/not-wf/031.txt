@@ -1,0 +1,2 @@
+Start element: doc
+Fatal Error: invalid character 0xC

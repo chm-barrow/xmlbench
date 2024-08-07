@@ -1,0 +1,7 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/009.xml:1: parser error : CharRef: invalid decimal value in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc>&#RE;</doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():        ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/009.xml:1: parser error : xmlParseCharRef: invalid xmlChar value 0 in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc>&#RE;</doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():        ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

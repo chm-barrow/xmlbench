@@ -1,0 +1,1 @@
+SAX Parse Exception at line 1, column 8: expected &# to be followed by a numeric character value

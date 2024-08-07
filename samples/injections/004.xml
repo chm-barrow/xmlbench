@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<!DOCTYPE foo [  
+<!ELEMENT foo (#PCDATA)>
+<!ENTITY xxe SYSTEM "file:///home/debian/Desktop/docs/samples/external/found.txt">]><foo>&xxe;</foo>

@@ -1,0 +1,6 @@
+Start element: doc
+Character data: X
+Character data: 
+
+Character data: Y
+End element: doc

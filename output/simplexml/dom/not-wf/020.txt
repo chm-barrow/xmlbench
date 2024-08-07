@@ -1,0 +1,4 @@
+PHP Warning:  simplexml_load_file(): ../samples/not-wf/020.xml:1: parser error : xmlParseEntityRef: no name in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file(): <doc a1="A & B"></doc> in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+PHP Warning:  simplexml_load_file():             ^ in /home/debian/Desktop/docs/simplexml/dom.php on line 30
+Error.

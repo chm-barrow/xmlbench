@@ -1,0 +1,3 @@
+Start element: foo
+Character data: Successful
+End element: foo
