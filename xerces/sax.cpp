@@ -78,6 +78,12 @@ int main(int argc, char* argv[]) {
         MySAXHandler handler;
         parser->setContentHandler(&handler);
         parser->setErrorHandler(&handler);
+        // Enable schema validation
+        parser->setFeature(XMLUni::fgSAX2CoreValidation, true);
+        parser->setFeature(XMLUni::fgXercesDynamic, false);
+        parser->setFeature(XMLUni::fgXercesSchema, true);
+        parser->setFeature(XMLUni::fgXercesSchemaFullChecking, true);
+        parser->setFeature(XMLUni::fgSAX2CoreNameSpaces, true);
 
         parser->parse(xmlFile);
         delete parser;

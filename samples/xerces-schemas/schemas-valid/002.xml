@@ -1,0 +1,7 @@
+<doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="002.xsd">
+  <item>
+    <type>1</type>
+    <color>blue</color>
+  </item>
+</doc>

@@ -1,6 +1,7 @@
 from to_prettyoutput import convert
 import glob
 from os.path import getsize
+from out_graph import graphMaker
 
 # Compares processed data with reference file to see if it has correctly been processed.
 def verif_output(data, reference):
@@ -72,6 +73,9 @@ def verif_error_simple(file):
 # This function launches all tests using every parser developped using Expat.
 def check_expat():
 
+    # This list contains all percentages of successful tests.
+    test_output = [0] * 6
+
     # Tests Expat parser on valid payloads.
 
     print("\nTests for valid payloads with Expat parser:\n")
@@ -100,9 +104,11 @@ def check_expat():
             valid_ctr_xxe += 1
     
     ratio_sax = round(( valid_ctr_sax / len(references) ) * 100, 2)
+    test_output[0] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[1] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests Expat parser on not well-formed payloads.
@@ -130,9 +136,11 @@ def check_expat():
             valid_ctr_xxe += 1
     
     ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[2] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(parser_output_sax) ) * 100, 2)
+    test_output[3] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests Expat parser on other type of payloads.
@@ -179,10 +187,14 @@ def check_expat():
             valid_ctr_xxe += 1
     
     ratio_sax = 100 - round(( valid_ctr_sax / len(references) ) * 100, 2)
+    test_output[4] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_xxe = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[5] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
+
+    return test_output
 
 
 
@@ -190,6 +202,9 @@ def check_expat():
 def check_xerces():
 
     # Tests Xerces parser on valid payloads.
+
+    # This list contains all percentages of successful tests.
+    test_output = [0] * 9
 
     print("\nTests for valid payloads with Xerces-C++ parser:\n")
 
@@ -230,12 +245,15 @@ def check_xerces():
             valid_ctr_xxe += 1
     
     ratio_sax = round(( valid_ctr_sax / len(results_sax) ) * 100, 2)
+    test_output[0] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_dom = round(( valid_ctr_dom / len(results_sax) ) * 100, 2)
+    test_output[1] = ratio_dom
     print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(results_xxe) ) * 100, 2)
+    test_output[2] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests Xerces parser on not well-formed payloads.
@@ -271,12 +289,15 @@ def check_xerces():
             valid_ctr_xxe += 1
     
     ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[3] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_dom = round(( valid_ctr_dom / len(results_sax) ) * 100, 2)
+    test_output[4] = ratio_dom
     print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(parser_output_sax) ) * 100, 2)
+    test_output[5] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests Xerces parser on other type of payloads.
@@ -338,19 +359,27 @@ def check_xerces():
             valid_ctr_xxe += 1
     
     ratio_sax = 100 - round(( valid_ctr_sax / len(references) ) * 100, 2)
+    test_output[6] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_dom = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[7] = ratio_dom
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     ratio_xxe = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[8] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
+
+    return test_output
 
 
 # This function launches all tests using every parser developped using SimpleXML.
 def check_simplexml():
 
     # Tests SimpleXML parser on valid payloads.
+
+    # This list contains all percentages of successful tests.
+    test_output = [0] * 6
 
     print("\nTests for valid payloads with SimpleXML parser:\n")
 
@@ -380,12 +409,14 @@ def check_simplexml():
             valid_ctr_xxe += 1
     
     ratio_dom = round(( valid_ctr_dom / len(results_dom) ) * 100, 2)
+    test_output[0] = ratio_dom
     print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(results_xxe) ) * 100, 2)
+    test_output[1] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
-    # Tests Nokogiri parser on not well-formed payloads.
+    # Tests SimpleXML parser on not well-formed payloads.
 
     print("\nTests for not well-formed payloads with SimpleXML parser.\n")
 
@@ -410,9 +441,11 @@ def check_simplexml():
             valid_ctr_xxe += 1
     
     ratio_dom = round(( valid_ctr_dom / len(results_dom) ) * 100, 2)
+    test_output[2] = ratio_dom
     print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(parser_output_dom) ) * 100, 2)
+    test_output[3] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests SimpleXML parser on other type of payloads.
@@ -459,15 +492,22 @@ def check_simplexml():
             valid_ctr_xxe += 1
 
     ratio_dom = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[4] = ratio_dom
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     ratio_xxe = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[5] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
+
+    return test_output
 
 # This function launches all tests using every parser developped using Nokogiri.
 def check_nokogiri():
 
     # Tests Nokogiri parser on valid payloads.
+
+    # This list contains all percentages of successful tests.
+    test_output = [0] * 9
 
     print("\nTests for valid payloads with Nokogiri parser:\n")
 
@@ -509,12 +549,15 @@ def check_nokogiri():
             valid_ctr_xxe += 1
     
     ratio_sax = round(( valid_ctr_sax / len(results_sax) ) * 100, 2)
+    test_output[0] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_dom = round(( valid_ctr_dom / len(results_sax) ) * 100, 2)
+    test_output[1] = ratio_dom
     print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(results_xxe) ) * 100, 2)
+    test_output[2] = ratio_sax
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests Nokogiri parser on not well-formed payloads.
@@ -550,12 +593,15 @@ def check_nokogiri():
             valid_ctr_xxe += 1
     
     ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[3] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_dom = round(( valid_ctr_dom / len(results_sax) ) * 100, 2)
+    test_output[4] = ratio_dom
     print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = round(( valid_ctr_xxe / len(parser_output_sax) ) * 100, 2)
+    test_output[5] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     # Tests Nokogiri parser on other type of payloads.
@@ -617,18 +663,28 @@ def check_nokogiri():
             valid_ctr_xxe += 1
     
     ratio_sax = 100 - round(( valid_ctr_sax / len(references) ) * 100, 2)
+    test_output[6] = ratio_sax
     print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
 
     ratio_dom = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[7] = ratio_dom
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
     ratio_xxe = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    test_output[8] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
+
+    return test_output
 
 
 if __name__ == '__main__':
 
-    check_expat()
-    check_xerces()
-    check_nokogiri()
-    check_simplexml()
+    expat = check_expat()
+    xerces = check_xerces()
+    nokogiri = check_nokogiri()
+    simplexml = check_simplexml()
+
+    # print(expat, xerces, nokogiri, simplexml)
+
+    graphics = graphMaker(expat, simplexml, xerces, nokogiri)
+    graphics.plot_xxe()

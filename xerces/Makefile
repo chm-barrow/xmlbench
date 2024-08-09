@@ -8,5 +8,7 @@ xxe:
 	g++ -o dom_xxe dom_xxe.cpp $(LNK)
 sax:
 	g++ -o sax sax.cpp $(LNK)
+validate:
+	g++ -o validate dom_validate.cpp $(LNK)
 clean:
-	rm dom dom_xxe sax
+	rm dom dom_xxe sax validate
