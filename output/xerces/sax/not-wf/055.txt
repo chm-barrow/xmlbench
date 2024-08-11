@@ -1,2 +1,3 @@
+Error: entity 'e' not found
 Start element: doc
 End element: doc

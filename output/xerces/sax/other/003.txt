@@ -1,14 +1,9 @@
+Error: root element differs from that declared in DOCTYPE
 Start element: userInfo
-Character data: 
- 
 Start element: firstName
 Character data: John
 End element: firstName
-Character data: 
- 
 Start element: lastName
 Character data: Successful
 End element: lastName
-Character data: 
-
 End element: userInfo

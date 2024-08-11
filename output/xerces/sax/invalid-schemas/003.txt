@@ -1,0 +1,4 @@
+Start element: age
+Character data: 200
+Error: value '200' must be less than or equal to maxInclusive facet value '120'
+End element: age

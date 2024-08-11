@@ -1,0 +1,2 @@
+The XML document is invalid:
+3:0: ERROR: Element 'type': This element is not expected. Expected is ( group ).

@@ -1,0 +1,2 @@
+PHP Warning:  DOMDocument::schemaValidate(): Element 'doc': [facet 'length'] The value has a length of '40'; this differs from the allowed length of '8'. in /home/debian/Desktop/docs/simplexml/schema_validate.php on line 40
+XML is not valid.

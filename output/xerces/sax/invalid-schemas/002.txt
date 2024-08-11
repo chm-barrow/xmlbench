@@ -1,0 +1,12 @@
+Start element: doc
+Start element: item
+Error: no declaration found for element 'type'
+Start element: type
+Character data: 1
+End element: type
+Start element: color
+Character data: blue
+End element: color
+Error: element 'type' is not allowed for content model '(group,color)'
+End element: item
+End element: doc

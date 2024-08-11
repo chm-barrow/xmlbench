@@ -1,0 +1,3 @@
+Start element: doc
+Character data: qwerty12
+End element: doc

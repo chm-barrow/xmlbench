@@ -1,3 +1,5 @@
+Error: no declaration found for element 'doc'
 Start element: doc
+Error: no declaration found for element 'a'
 Start element: a
 Fatal Error: unterminated end tag 'a'

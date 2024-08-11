@@ -1,0 +1,3 @@
+Start element: car
+Character data: Audi
+End element: car

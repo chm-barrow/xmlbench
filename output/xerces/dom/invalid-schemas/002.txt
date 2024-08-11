@@ -1,0 +1,3 @@
+Error: no declaration found for element 'type'
+Error: element 'type' is not allowed for content model '(group,color)'
+XML file validated successfully.

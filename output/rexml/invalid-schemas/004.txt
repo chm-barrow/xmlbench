@@ -1,0 +1,2 @@
+The XML document is invalid:
+1:0: ERROR: Element 'car': [facet 'enumeration'] The value 'Mercedes' is not an element of the set {'Audi', 'Golf', 'BMW'}.

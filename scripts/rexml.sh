@@ -23,7 +23,7 @@ do
 	ruby dom_xxe.rb ${INPUT}${i}.xml >> ${OUT}xxe/not-wf/${i}.txt 2>&1
 done
 
-# Other tests.
+# Injections tests.
 INPUT="../samples/injections/"
 rm ../output/rexml/dom/other/*.txt ../output/rexml/sax/other/*.txt ../output/rexml/xxe/other/*.txt
 for i in {001..005}
@@ -33,3 +33,20 @@ do
 	timeout 2s ruby dom_xxe.rb  ${INPUT}${i}.xml >> ${OUT}xxe/other/${i}.txt 2>&1
 done
 
+# Valid schemas tests.
+INPUT="../samples/schemas-valid/"
+
+rm ../output/rexml/valid-schemas/*.txt
+for i in {001..005}
+do
+	ruby validate.rb ${INPUT}${i}.xml ${INPUT}${i}.xsd >> ${OUT}valid-schemas/${i}.txt 2>&1
+done
+
+INPUT="../samples/schemas-invalid/"
+
+# Invalid schemas tests.
+rm ../output/rexml/invalid-schemas/*.txt
+for i in {001..005}
+do
+	ruby validate.rb ${INPUT}${i}.xml ${INPUT}${i}.xsd >> ${OUT}invalid-schemas/${i}.txt 2>&1
+done

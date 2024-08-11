@@ -1,0 +1,2 @@
+The XML document is invalid:
+1:0: ERROR: Element 'doc': [facet 'length'] The value has a length of '40'; this differs from the allowed length of '8'.

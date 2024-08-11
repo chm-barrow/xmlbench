@@ -1,16 +1,8 @@
 Start element: doc
-Character data: 
-
 Start element: e
 End element: e
-Character data: 
-
 Start element: e
 End element: e
-Character data: 
-
 Start element: e
 End element: e
-Character data: 
-
 End element: doc

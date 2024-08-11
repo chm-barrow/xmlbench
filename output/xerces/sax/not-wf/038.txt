@@ -1,1 +1,4 @@
+Error: no declaration found for element 'doc'
+Error: attribute 'x' is not declared for element 'doc'
+Error: attribute 'y' is not declared for element 'doc'
 Fatal Error: attribute 'x' is already specified for element 'doc'

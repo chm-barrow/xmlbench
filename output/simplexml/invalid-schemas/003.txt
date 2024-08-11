@@ -1,0 +1,2 @@
+PHP Warning:  DOMDocument::schemaValidate(): Element 'age': [facet 'maxInclusive'] The value '200' is greater than the maximum value allowed ('120'). in /home/debian/Desktop/docs/simplexml/schema_validate.php on line 40
+XML is not valid.

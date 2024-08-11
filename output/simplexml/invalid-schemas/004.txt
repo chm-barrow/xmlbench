@@ -1,0 +1,2 @@
+PHP Warning:  DOMDocument::schemaValidate(): Element 'car': [facet 'enumeration'] The value 'Mercedes' is not an element of the set {'Audi', 'Golf', 'BMW'}. in /home/debian/Desktop/docs/simplexml/schema_validate.php on line 40
+XML is not valid.

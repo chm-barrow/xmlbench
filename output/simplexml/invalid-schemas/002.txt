@@ -1,0 +1,2 @@
+PHP Warning:  DOMDocument::schemaValidate(): Element 'type': This element is not expected. Expected is ( group ). in /home/debian/Desktop/docs/simplexml/schema_validate.php on line 40
+XML is not valid.

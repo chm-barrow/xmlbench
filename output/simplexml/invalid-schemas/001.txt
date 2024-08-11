@@ -1,0 +1,2 @@
+PHP Warning:  DOMDocument::schemaValidate(): Element 'type': '1' is not a valid value of the atomic type 'xs:date'. in /home/debian/Desktop/docs/simplexml/schema_validate.php on line 40
+XML is not valid.

@@ -1,0 +1,4 @@
+Start element: doc
+Character data: StringThatIsClearlyLongerThanItNeedsToBe
+Error: value 'StringThatIsClearlyLongerThanItNeedsToBe' has length '40' which is not equal to length facet value '8'
+End element: doc

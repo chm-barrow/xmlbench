@@ -1,11 +1,15 @@
+Error: no declaration found for element 'userInfo'
+Error: root element differs from that declared in DOCTYPE
 Start element: userInfo
 Character data: 
  
+Error: no declaration found for element 'firstName'
 Start element: firstName
 Character data: John
 End element: firstName
 Character data: 
  
+Error: no declaration found for element 'lastName'
 Start element: lastName
 Character data: Successful
 End element: lastName

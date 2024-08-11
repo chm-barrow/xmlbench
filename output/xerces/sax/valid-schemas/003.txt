@@ -1,0 +1,3 @@
+Start element: age
+Character data: 28
+End element: age

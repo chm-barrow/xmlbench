@@ -2,6 +2,8 @@ from to_prettyoutput import convert
 import glob
 from os.path import getsize
 from out_graph import graphMaker
+import os
+import sys
 
 # Compares processed data with reference file to see if it has correctly been processed.
 def verif_output(data, reference):
@@ -47,6 +49,8 @@ def verif_error_xerces(file):
         return True
     if "SAX Parse Exception" in data:
         return True
+    if "Error:" in data:
+        return True
     else:
         return False
     
@@ -55,6 +59,8 @@ def verif_error_noko(file):
         data = f.read()
 
     if "FATAL" in data:
+        return True
+    if "ERROR:" in data:
         return True
     else:
         return False
@@ -65,13 +71,20 @@ def verif_error_simple(file):
 
     if "Error." in data:
         return True
+    if "XML is not valid." in data:
+        return True
     if data == '':
         return True
+    if "XML is valid." in data:
+        return False
     else:
         return False
 
 # This function launches all tests using every parser developped using Expat.
-def check_expat():
+def check_expat(verbose=True):
+
+    if verbose == False:
+        sys.stdout = open(os.devnull, 'w')
 
     # This list contains all percentages of successful tests.
     test_output = [0] * 6
@@ -199,12 +212,15 @@ def check_expat():
 
 
 # This function launches all tests using every parser developped using Xerces-C++.
-def check_xerces():
+def check_xerces(verbose=True):
+
+    if verbose == False:
+        sys.stdout = open(os.devnull, 'w')
 
     # Tests Xerces parser on valid payloads.
 
     # This list contains all percentages of successful tests.
-    test_output = [0] * 9
+    test_output = [0] * 13
 
     print("\nTests for valid payloads with Xerces-C++ parser:\n")
 
@@ -300,9 +316,9 @@ def check_xerces():
     test_output[5] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
-    # Tests Xerces parser on other type of payloads.
+    # Tests Xerces parser on injection payloads.
 
-    print("\nTests for other type of payloads with Xerces parser.\n")
+    print("\nTests for injection payloads with Xerces parser.\n")
 
     references = glob.glob("references/other/*")
     parser_output_sax = glob.glob("output/xerces/sax/other/*")
@@ -370,16 +386,79 @@ def check_xerces():
     test_output[8] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
+   # Tests Xerces parser on schema validation payloads.
+
+    print("\nTests for schema validation payloads with Xerces parser. (Valid payloads)\n")
+
+    parser_output_sax = glob.glob("output/xerces/sax/valid-schemas/*")
+    parser_output_dom = glob.glob("output/xerces/dom/valid-schemas/*")
+
+    results_sax = []
+    results_dom = []
+    for index in range(len(parser_output_sax)):
+        results_sax.append(verif_error_xerces(parser_output_sax[index]))
+        results_dom.append(verif_error_xerces(parser_output_dom[index]))
+
+    valid_ctr_sax = 0
+    for answer in results_sax:
+        if answer == False:
+            valid_ctr_sax += 1
+
+    valid_ctr_dom = 0
+    for answer in results_dom:
+        if answer == False:
+            valid_ctr_dom += 1
+    
+    ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[9] = ratio_sax
+    print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
+
+    ratio_dom = round(( valid_ctr_dom / len(results_sax) ) * 100, 2)
+    test_output[10] = ratio_dom
+    print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
+
+    print("\nTests for schema validation payloads with Xerces parser. (Invalid payloads)\n")
+
+    parser_output_sax = glob.glob("output/xerces/sax/invalid-schemas/*")
+    parser_output_dom = glob.glob("output/xerces/dom/invalid-schemas/*")
+
+    results_sax = []
+    results_dom = []
+    for index in range(len(parser_output_sax)):
+        results_sax.append(verif_error_xerces(parser_output_sax[index]))
+        results_dom.append(verif_error_xerces(parser_output_dom[index]))
+
+    valid_ctr_sax = 0
+    for answer in results_sax:
+        if answer == True:
+            valid_ctr_sax += 1
+
+    valid_ctr_dom = 0
+    for answer in results_dom:
+        if answer == True:
+            valid_ctr_dom += 1
+    
+    ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[11] = ratio_sax
+    print("Tests results for SAX-like parser: " + str(ratio_sax) + "%")
+
+    ratio_dom = round(( valid_ctr_dom / len(results_sax) ) * 100, 2)
+    test_output[12] = ratio_dom
+    print("Tests results for DOM-like parser: " + str(ratio_dom) + "%")
+
     return test_output
 
 
 # This function launches all tests using every parser developped using SimpleXML.
-def check_simplexml():
+def check_simplexml(verbose=True):
+
+    if verbose == False:
+        sys.stdout = open(os.devnull, 'w')
 
     # Tests SimpleXML parser on valid payloads.
 
     # This list contains all percentages of successful tests.
-    test_output = [0] * 6
+    test_output = [0] * 8
 
     print("\nTests for valid payloads with SimpleXML parser:\n")
 
@@ -448,9 +527,9 @@ def check_simplexml():
     test_output[3] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
-    # Tests SimpleXML parser on other type of payloads.
+    # Tests SimpleXML parser on injection payloads.
 
-    print("\nTests for other type of payloads with SimpleXML parser.\n")
+    print("\nTests for injection payloads with SimpleXML parser.\n")
 
     references = glob.glob("references/other/*")
     parser_output_dom = glob.glob("output/simplexml/dom/other/*")
@@ -491,23 +570,62 @@ def check_simplexml():
         if answer == True:
             valid_ctr_xxe += 1
 
-    ratio_dom = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
+    ratio_dom = 100 - round(( valid_ctr_dom / len(references) ) * 100, 2)
     test_output[4] = ratio_dom
-    print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
+    print("Tests results for DOM parser: " + str(ratio_dom) + "%")
 
     ratio_xxe = 100 - round(( valid_ctr_xxe / len(references) ) * 100, 2)
     test_output[5] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
+    # Tests SimpleXML parser on schema validation payloads.
+
+    print("\nTests for not schema validation payloads with SimpleXML parser. (Valid payloads)\n")
+
+    parser_output_dom = glob.glob("output/simplexml/valid-schemas/*")
+
+    results_dom = []
+    for index in range(len(parser_output_dom)):
+        results_dom.append(verif_error_simple(parser_output_dom[index]))
+
+    valid_ctr_dom = 0
+    for answer in results_dom:
+        if answer == False:
+            valid_ctr_dom += 1
+    
+    ratio_dom = round(( valid_ctr_dom / len(results_dom) ) * 100, 2)
+    test_output[6] = ratio_dom
+    print("Tests results for schema validation (valid payloads): " + str(ratio_dom) + "%")
+
+    print("\nTests for schema validation payloads with SimpleXML parser. (Invalid payloads)\n")
+
+    parser_output_dom = glob.glob("output/simplexml/invalid-schemas/*")
+
+    results_dom = []
+    for index in range(len(parser_output_dom)):
+        results_dom.append(verif_error_simple(parser_output_dom[index]))
+
+    valid_ctr_dom = 0
+    for answer in results_dom:
+        if answer == True:
+            valid_ctr_dom += 1
+    
+    ratio_dom = round(( valid_ctr_dom / len(results_dom) ) * 100, 2)
+    test_output[7] = ratio_dom
+    print("Tests results for schema validation (invalid payloads): " + str(ratio_dom) + "%")
+
     return test_output
 
 # This function launches all tests using every parser developped using Nokogiri.
-def check_nokogiri():
+def check_nokogiri(verbose=True):
+
+    if verbose == False:
+        sys.stdout = open(os.devnull, 'w')
 
     # Tests Nokogiri parser on valid payloads.
 
     # This list contains all percentages of successful tests.
-    test_output = [0] * 9
+    test_output = [0] * 11
 
     print("\nTests for valid payloads with Nokogiri parser:\n")
 
@@ -674,17 +792,40 @@ def check_nokogiri():
     test_output[8] = ratio_xxe
     print("Tests results for XXE parser: " + str(ratio_xxe) + "%")
 
+# Tests Nokogiri parser on schema validation payloads.
+
+    print("\nTests for schema validation payloads with Nokogiri parser. (Valid)\n")
+
+    parser_output_sax = glob.glob("output/rexml/valid-schemas/*")
+
+    results_sax = []
+    for index in range(len(parser_output_sax)):
+        results_sax.append(verif_error_noko(parser_output_sax[index]))
+
+    valid_ctr_sax = 0
+    for answer in results_sax:
+        if answer == False:
+            valid_ctr_sax += 1
+    
+    ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[9] = ratio_sax
+    print("Tests results for schema validation (Valid): " + str(ratio_sax) + "%")
+
+    print("\nTests for schema validation payloads with Nokogiri parser. (Invalid)\n")
+
+    parser_output_sax = glob.glob("output/rexml/invalid-schemas/*")
+
+    results_sax = []
+    for index in range(len(parser_output_sax)):
+        results_sax.append(verif_error_noko(parser_output_sax[index]))
+
+    valid_ctr_sax = 0
+    for answer in results_sax:
+        if answer == True:
+            valid_ctr_sax += 1
+    
+    ratio_sax = round(( valid_ctr_sax / len(parser_output_sax) ) * 100, 2)
+    test_output[10] = ratio_sax
+    print("Tests results for schema validation (Invalid): " + str(ratio_sax) + "%")
+
     return test_output
-
-
-if __name__ == '__main__':
-
-    expat = check_expat()
-    xerces = check_xerces()
-    nokogiri = check_nokogiri()
-    simplexml = check_simplexml()
-
-    # print(expat, xerces, nokogiri, simplexml)
-
-    graphics = graphMaker(expat, simplexml, xerces, nokogiri)
-    graphics.plot_xxe()

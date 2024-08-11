@@ -1,0 +1,2 @@
+Error: value '200' must be less than or equal to maxInclusive facet value '120'
+XML file validated successfully.

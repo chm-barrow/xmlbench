@@ -1,0 +1,2 @@
+Error: incomplete date value '1'
+XML file validated successfully.

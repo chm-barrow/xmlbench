@@ -1,0 +1,4 @@
+Start element: car
+Character data: Mercedes
+Error: value 'Mercedes' not in enumeration
+End element: car

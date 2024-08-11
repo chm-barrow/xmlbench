@@ -1,0 +1,11 @@
+Start element: doc
+Start element: item
+Start element: type
+Character data: 1
+Error: incomplete date value '1'
+End element: type
+Start element: color
+Character data: blue
+End element: color
+End element: item
+End element: doc

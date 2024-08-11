@@ -1,6 +1,8 @@
+Error: no declaration found for element 'doc'
 Start element: doc
 Character data: 
 
+Error: no declaration found for element 'a'
 Start element: a
 Character data: xyz]
 End element: a

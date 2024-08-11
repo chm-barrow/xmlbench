@@ -21,12 +21,28 @@ do
 	php dom_xxe.php ${INPUT}${i}.xml >> ${OUT}xxe/not-wf/${i}.txt 2>&1
 done
 
-# Other tests.
+# Injection tests.
 INPUT="../samples/injections/"
 rm ../output/simplexml/dom/other/*.txt ../output/simplexml/xxe/other/*.txt
 for i in {001..005}
 do
 	timeout 2s php dom.php  ${INPUT}${i}.xml >> ${OUT}dom/other/${i}.txt 2>&1
 	timeout 2s php dom_xxe.php  ${INPUT}${i}.xml >> ${OUT}xxe/other/${i}.txt 2>&1
+done
+
+# Valid schemas tests.
+INPUT="../samples/schemas-valid/"
+rm ../output/simplexml/valid-schemas/*.txt
+for i in {001..005}
+do
+	php schema_validate.php ${INPUT}${i}.xml ${INPUT}${i}.xsd >> ${OUT}valid-schemas/${i}.txt 2>&1
+done
+
+# Invalid schemas tests.
+INPUT="../samples/schemas-invalid/"
+rm ../output/simplexml/invalid-schemas/*.txt
+for i in {001..005}
+do
+	php schema_validate.php ${INPUT}${i}.xml ${INPUT}${i}.xsd >> ${OUT}invalid-schemas/${i}.txt 2>&1
 done
 

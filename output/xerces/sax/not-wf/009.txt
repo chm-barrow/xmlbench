@@ -1,2 +1,3 @@
+Error: no declaration found for element 'doc'
 Start element: doc
 Fatal Error: expected &# to be followed by a numeric character value
