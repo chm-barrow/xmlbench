@@ -32,9 +32,7 @@ def verif_error_expat(file):
     with open(file,'r') as f:
         data = f.read()
 
-    if "not well-formed" in data:
-        return True
-    if "unclosed token" in data:
+    if "Parse error" in data:
         return True
     else:
         return False
@@ -701,7 +699,7 @@ def check_nokogiri(verbose=True):
             valid_ctr_sax += 1
 
     valid_ctr_dom = 0
-    for answer in results_sax:
+    for answer in results_dom:
         if answer == True:
             valid_ctr_dom += 1
 
